@@ -1,6 +1,23 @@
 const Header = (title, date, temp) => {
 
   const headerDiv = document.createElement('div');
+  headerDiv.classList.add('header');
+
+  const dateSpan = document.createElement('span');
+  dateSpan.classList.add('span');
+  dateSpan.textContent = date;
+  headerDiv.appendChild(dateSpan);
+
+  const titleH1 = document.createElement('h1');
+  titleH1.textContent = title;
+  headerDiv.appendChild(titleH1);
+  
+  const tempSpan = document.createElement('span');
+  tempSpan.classList.add('temp');
+  tempSpan.textContent = temp;
+  headerDiv.appendChild(tempSpan);
+  
+  return headerDiv;
 
   // TASK 1
   // ---------------------
