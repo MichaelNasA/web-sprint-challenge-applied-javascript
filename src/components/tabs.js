@@ -8,11 +8,13 @@ const Tabs = (topics) => {
     tab.classList.add('tab');
     tab.textContent = topic;
     topicsTag.appendChild(tab);
-    
-    //console.log(topicsTag);
+
+  
   });
 
-  return topicsTag;
+   //console.log(topicsTag); 
+
+    return topicsTag;
 
   // TASK 3
   // ---------------------
@@ -31,6 +33,19 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
+
+  const endpoint = 'http://localhost:5001/api/topics';
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      const topics = data.topics;
+      const tabsElement = Tabs(topics);
+      const parentElement = document.querySelector(selector);
+      parentElement.appendChild(tabsElement);
+    })
+    .catch(error => console.error('Error fetching topics:', error));
+
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.

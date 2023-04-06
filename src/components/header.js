@@ -42,7 +42,7 @@ const Header = (title, date, temp) => {
 
 const headerAppender = (selector) => {
 
-  const header = Header('hl', 'span', 'temp');
+  const header = Header('Bloomtech Times', 'April 4th 2023', '75');
   const targetElement = document.querySelector(selector);
   targetElement.appendChild(header);
 
