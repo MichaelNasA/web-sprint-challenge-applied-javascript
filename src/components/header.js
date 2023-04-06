@@ -4,19 +4,22 @@ const Header = (title, date, temp) => {
   headerDiv.classList.add('header');
 
   const dateSpan = document.createElement('span');
-  dateSpan.classList.add('span');
+  dateSpan.classList.add('date');
   dateSpan.textContent = date;
   headerDiv.appendChild(dateSpan);
 
   const titleH1 = document.createElement('h1');
   titleH1.textContent = title;
+  titleH1.style.color = "blue";
   headerDiv.appendChild(titleH1);
   
   const tempSpan = document.createElement('span');
   tempSpan.classList.add('temp');
   tempSpan.textContent = temp;
   headerDiv.appendChild(tempSpan);
-  
+
+  //console.log(headerDiv);
+
   return headerDiv;
 
   // TASK 1
@@ -32,8 +35,17 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 }
+  // const header = Header( 'hl', 'span', 'temp');
+  // document.body.appendChild(header);
+  
+
 
 const headerAppender = (selector) => {
+
+  const header = Header('hl', 'span', 'temp');
+  const targetElement = document.querySelector(selector);
+  targetElement.appendChild(header);
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
